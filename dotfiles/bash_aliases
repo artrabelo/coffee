@@ -37,8 +37,8 @@ alias ytmp3="youtube-dl -x --audio-format mp3"
 # Usage: userfox /path/to/user.js
 userfox ()
 {
-	TMPDIR=$(mktemp -d) && echo "Profile created at $TMPDIR" &&
+    TMPDIR=$(mktemp -d) && echo "Profile created at $TMPDIR" &&
     cp "$1" $TMPDIR &&
-	firefox --no-remote --profile $TMPDIR &&
-	rm -rf $TMPDIR
+    firefox --no-remote --profile $TMPDIR &&
+    rm -rf $TMPDIR
 }
