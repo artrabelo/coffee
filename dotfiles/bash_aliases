@@ -1,0 +1,44 @@
+# System
+alias update="apt update && apt upgrade"
+alias clean="apt autoremove -y && apt clean"
+alias full-clean="sh -c $HOME/Scripts/jobs/cleaner.sh"
+alias rst="systemctl restart"
+alias stat="systemctl status"
+alias disb="systemctl disable"
+
+# Quick virtualenv setup
+alias venv="virtualenv -q venv; source ./venv/bin/activate"
+
+# Files and directories
+alias dl="cd $HOME/Downloads"
+alias isos="cd $HOME/ISOs"
+alias hosts="vim /etc/hosts"
+alias grub="vim /etc/default/grub"
+alias vimrc="vim $HOME/.vimrc"
+alias aliases="vim $HOME/.bash_aliases"
+
+# General commands
+alias bat="batcat"
+alias l="ls -lhF --group-directories-first --color=auto"
+alias shred="shred -zuv"
+alias ffind="find -type f -name"
+alias dfind="find -type d -name"
+alias mem="free -mh"
+alias cpv="rsync -ah --info=progress2"
+alias wget="wget -c"
+alias zt="zathura"
+alias pfetch="sh -c $HOME/Apps/pfetch/pfetch"
+alias nfetch="neofetch"
+
+alias upip="python3 -m pip install --upgrade pip"
+alias ytmp3="youtube-dl -x --audio-format mp3"
+
+# Creates a temporary profile in Firefox using a custom user.js file
+# Usage: userfox /path/to/user.js
+userfox ()
+{
+	TMPDIR=$(mktemp -d) && echo "Profile created at $TMPDIR" &&
+    cp "$1" $TMPDIR &&
+	firefox --no-remote --profile $TMPDIR &&
+	rm -rf $TMPDIR
+}

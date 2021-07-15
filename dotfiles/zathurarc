@@ -1,0 +1,8 @@
+# Ajustar largura automaticamente
+set adjust-open width
+
+# Mostrar o nome do arquivo no título
+set window-title-basename true
+
+# Cor para o tema escuro
+recolor-darkcolor "#121212"
